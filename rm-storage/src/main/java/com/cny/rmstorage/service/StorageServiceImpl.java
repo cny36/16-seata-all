@@ -19,6 +19,9 @@ public class StorageServiceImpl implements StorageService {
     @Transactional(rollbackFor = Exception.class)
     public void deduct(String commodityCode, int count) {
         StorageEntity storageEntity = storageRepository.findByCommodityCode(commodityCode);
+        if (storageEntity == null) {
+            throw new RuntimeException("commodityCode=" + commodityCode + "不存在");
+        }
         if (storageEntity.getCount() < count) {
             throw new RuntimeException("该商品库存不足");
         }

@@ -17,8 +17,9 @@ public class MallController {
     private MallService mallService;
 
     /**
-     * http://localhost:8888/mall/sale?userId=9&commodityCode=111&orderCount=999
-     * 当orderCount大于库存时，会发生全局回滚
+     * http://localhost:8888/mall/sale?userId=zss&commodityCode=1&orderCount=10000000  当orderCount大于库存时，会发生全局回滚
+     * <p>
+     * 注意：启动seata-server时， 需要指定ip和端口（sh seata-server.sh -h -p），否则会报错
      *
      * @param userId
      * @param commodityCode
