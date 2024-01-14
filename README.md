@@ -1,8 +1,5 @@
 # 16-seata-all
-分布式事务
-
-AT模式--Seata
-
+**基于Seata实现分布式事务（支持AT、TCC、SAGA 、XA事务模式）**
 
 0、nacos正常启动
 
